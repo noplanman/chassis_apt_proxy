@@ -8,11 +8,20 @@ Tested and fully working with [Apt-Cacher NG][2]
 
 ## Installation
 
+Add this repo to the `extensions` section of your config:
+
+```yaml
+extensions:
+  - noplanman/chassis-apt-proxy
+```
+
+*or*
+
 Clone this repository into your Chassis `extensions` directory:
 
 ```sh
-# In your Chassis root directory
-$ git clone https://github.com/noplanman/chassis-apt-proxy extensions/apt-proxy
+$ cd extensions
+$ git clone https://github.com/noplanman/chassis-apt-proxy
 ```
 
 ## Configuration
