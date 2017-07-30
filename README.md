@@ -8,18 +8,21 @@ Tested and fully working with [Apt-Cacher NG][2]
 
 ## Installation
 
-Add this repo to the `extensions` section of your config:
+*Either...*
+
+Add this extension to your `config.local.yaml`:
 
 ```yaml
 extensions:
   - noplanman/chassis-apt-proxy
 ```
 
-*or*
+*or...*
 
 Clone this repository into your Chassis `extensions` directory:
 
 ```sh
+# In your Chassis root directory
 $ cd extensions
 $ git clone https://github.com/noplanman/chassis-apt-proxy
 ```
@@ -45,11 +48,6 @@ Now simply provision your box:
 ```sh
 $ vagrant up --provision
 ```
-
-## Todo
-
-I'm not sure in what order the extensions get loaded when using file globbing, so it's possible that this extension gets loaded too late.
-Need to find a way of getting it loaded as the first one!
 
 ## TOTAL APT proxy
 
