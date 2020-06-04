@@ -14,7 +14,7 @@ Add this extension to your `config.local.yaml`:
 
 ```yaml
 extensions:
-  - noplanman/chassis-apt-proxy
+  - noplanman/chassis_apt_proxy
 ```
 
 *or...*
@@ -24,7 +24,7 @@ Clone this repository into your Chassis `extensions` directory:
 ```sh
 # In your Chassis root directory
 $ cd extensions
-$ git clone https://github.com/noplanman/chassis-apt-proxy
+$ git clone https://github.com/noplanman/chassis_apt_proxy
 ```
 
 ## Configuration
@@ -41,7 +41,7 @@ apt_proxy:
 To remove any previously added proxy, just leave the single `http` value blank and provision your box. Only then can you remove the config and extension:
 ```yaml
 apt_proxy:
-  html:
+  http:
 ```
 
 Now simply provision your box:

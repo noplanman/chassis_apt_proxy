@@ -1,32 +1,24 @@
-class chassis-apt-proxy (
+class chassis_apt_proxy (
   $config
 ) {
   if ( $config[apt_proxy] ) {
+    # Force this extension to be run before any others.
     stage { "preinstall_apt_proxy":
       before => Stage['main'],
     }
-    class { "chassis-apt-proxy::config":
+    class { "chassis_apt_proxy::config":
       config => $config[apt_proxy],
       stage  => preinstall_apt_proxy,
     }
   }
 }
 
-class chassis-apt-proxy::config (
+class chassis_apt_proxy::config (
   $config
 ) {
-  $file = $config[file] ? {
-    default => $config[file],
-    ''      => '01proxy'
-  }
-  $http = $config[http] ? {
-    default => $config[http],
-    ''      => 'false'
-  }
-  $https = $config[https] ? {
-    default => $config[https],
-    ''      => 'false'
-  }
+  $file = pick($config[file], "01proxy")
+  $http = pick($config[http], "false")
+  $https = pick($config[https], "false")
 
   $fullpath = "/etc/apt/apt.conf.d/${file}"
 
